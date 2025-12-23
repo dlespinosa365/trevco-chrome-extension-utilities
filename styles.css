@@ -1,0 +1,207 @@
+/* Contenedor principal del JSON */
+.netsuite-json-container {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Estilos para JSON formateado en NetSuite */
+.netsuite-json-formatted {
+  margin: 0;
+  padding: 8px;
+  background-color: #1e1e1e;
+  border: 1px solid #3e3e3e;
+  border-radius: 4px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 13px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  color: #d4d4d4;
+  line-height: 1.5;
+  min-height: 50px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Botón de copiar */
+.json-copy-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.json-copy-button:hover {
+  background-color: #005a9e;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.json-copy-button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.json-copy-button.copied {
+  background-color: #28a745;
+}
+
+/* Syntax highlighting - Estilo VS Code Dark */
+.json-highlight-container {
+  display: inline;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Keys del JSON (nombres de propiedades) */
+.json-key {
+  color: #9cdcfe;
+}
+
+/* Strings (valores) */
+.json-string {
+  color: #ce9178;
+}
+
+/* URLs de imágenes - cursor pointer para indicar interactividad */
+.json-image-url {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+.json-image-url:hover {
+  color: #ffa500;
+}
+
+.json-number {
+  color: #b5cea8;
+}
+
+.json-boolean {
+  color: #569cd6;
+}
+
+.json-null {
+  color: #569cd6;
+}
+
+/* Llaves { } */
+.json-brace {
+  color: #ffd700;
+}
+
+/* Corchetes [ ] */
+.json-bracket {
+  color: #d4d4d4;
+}
+
+.json-colon {
+  color: #d4d4d4;
+}
+
+.json-comma {
+  color: #d4d4d4;
+}
+
+/* Modal de imagen */
+.json-image-modal {
+  position: fixed;
+  z-index: 10000;
+  pointer-events: auto;
+  animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.json-image-modal-content {
+  background-color: #2d2d2d;
+  border: 2px solid #007acc;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.json-image-modal-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  object-fit: contain;
+}
+
+.json-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #1e1e1e;
+  border: 2px dashed #555;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  color: #666;
+  box-sizing: border-box;
+}
+
+.json-image-error {
+  color: #f48771;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.json-image-dimensions {
+  color: #9cdcfe;
+  font-size: 11px;
+  text-align: center;
+  margin-top: 4px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  background-color: rgba(156, 220, 254, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* Mejorar la legibilidad del contenedor */
+span.uir-field.inputreadonly.uir-resizable[data-json-formatted="true"] {
+  display: block !important;
+  padding: 4px;
+}
+

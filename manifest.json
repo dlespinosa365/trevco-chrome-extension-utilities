@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "NetSuite JSON Formatter",
+    "version": "1.0.0",
+    "description": "Formatea JSON en campos de NetSuite para una mejor legibilidad",
+    "permissions": [
+        "activeTab"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.netsuite.com/*",
+                "*://*.app.netsuite.com/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "css": [
+                "styles.css"
+            ],
+            "run_at": "document_idle"
+        }
+    ],
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    }
+}
